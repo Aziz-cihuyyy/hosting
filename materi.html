@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi Hosting</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      background-color: #e9eef3;
+    }
+
+    /* Sidebar dengan background pola */
+    .sidebar {
+      width: 240px;
+      color: white;
+      padding-top: 20px;
+      flex-shrink: 0;
+      background-color: #4a90e2;
+      background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png');
+      background-size: cover;
+      background-repeat: repeat;
+      background-blend-mode: multiply;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .sidebar a {
+      display: block;
+      color: #f8f8f8;
+      text-decoration: none;
+      padding: 12px 20px;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+
+    .sidebar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding-left: 28px;
+    }
+
+    /* Konten utama */
+    .content {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    /* Kotak materi */
+    .materi-box {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .materi-box h1 {
+      color: #000;
+      margin-top: 0;
+    }
+
+    .materi-box p, .materi-box li {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .materi-box img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h3>Materi</h3>
+    <a href="#" onclick="showContent('hosting')">📡 Hosting</a>
+    <a href="#" onclick="showContent('controlpanel')">⚙️ Control Panel</a>
+  </div>
+
+  <!-- Konten utama -->
+  <div class="content">
+    <div id="hosting" class="materi materi-box">
+      <h1>Pengenalan Hosting</h1>
+      <img src="hosting.jpg" alt="Gambar Hosting">
+      <p><b>Apa Itu Hosting?</b><br><br><b>Hosting</b> adalah layanan penyimpanan data digital di server yang selalu terhubung ke internet, sehingga website dapat diakses kapan pun dan dari mana pun.
+      Server hosting berfungsi layaknya rumah bagi file website — semua komponen seperti gambar, teks, video, database, dan file pemrograman disimpan di dalamnya.
+      Setiap kali seseorang membuka website, browser akan mengambil data dari server hosting lalu menampilkannya di layar pengguna.</p>
+      <p>Cara kerja hosting: ketika pengguna mengetik alamat web di browser, browser akan menghubungi server tempat website disimpan, lalu menampilkan isi situs tersebut.</p>
+      <p><b>Jenis-jenis hosting:</b></p>
+      <ul>
+        <li>Shared Hosting</li>
+        <li>VPS (Virtual Private Server)</li>
+        <li>Dedicated Server</li>
+        <li>Cloud Hosting</li>
+      </ul>
+    </div>
+
+    <div id="controlpanel" class="materi materi-box hidden">
+      <h1>Pengenalan Control Panel</h1>
+      <img src="control panel.jpg" alt="Gambar Control Panel" width="450" height="250">
+      <p><b>Apa Itu Control Panel?</b><br><br> <b>Control Panel Hosting</b> adalah antarmuka berbasis web yang digunakan untuk mengelola akun hosting dan semua sumber dayanya.
+      Melalui control panel, pengguna dapat melakukan berbagai konfigurasi tanpa perlu mengetik perintah melalui terminal.
+      Dengan control panel, pengelolaan server menjadi lebih mudah, cepat, dan aman, terutama bagi pengguna non-teknis.</p>
+      <p><b>Fungsi Control Panel:</b></p>
+      <ul>
+        <li><b>Manajemen File</b></li>
+        <p>Mengupload, menghapus, atau mengedit file website melalui File Manager.</p>
+
+        <li><b>Manajemen Domain & Subdomain</b></li>
+        <p>Menambahkan domain baru, subdomain, dan mengatur DNS zone.</p>
+
+        <li><b>Email Hosting</b></li>
+        <p>Membuat akun email dengan domain sendiri (contoh: admin@namadomain.com
+        ).</p>
+
+        <li><b>Database Management</b></li>
+        <p>Membuat dan mengelola database MySQL atau PostgreSQL.</p>
+
+        <li><b>Instalasi CMS Otomatis</b></li>
+        <p>Memasang WordPress, Joomla, atau Moodle hanya dengan beberapa klik.</p>
+
+        <li><b>Keamanan Server</b></li>
+        <p>Mengaktifkan SSL/TLS, proteksi DDoS, serta manajemen backup otomatis.</p>
+
+        <li><b>Monitoring dan Statistik</b></li>
+        <p>Melihat penggunaan CPU, RAM, storage, serta jumlah pengunjung website.</p>
+
+      </ul>
+      <p>Contoh control panel populer: cPanel, Plesk, DirectAdmin, Webuzo.</p>
+    </div>
+  </div>
+
+  <script>
+    function showContent(id) {
+      // Sembunyikan semua materi
+      var sections = document.querySelectorAll('.materi');
+      sections.forEach(function(section) {
+        section.classList.add('hidden');
+      });
+
+      // Tampilkan materi yang dipilih
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
+  

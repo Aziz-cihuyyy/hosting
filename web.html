@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Saya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Biodata Pribadi</h1>
+    </header>
+
+    <main>
+          <!-- Landing Page -->
+    <section id="landingPage">
+        <div class="landing-content">
+            <h1>Selamat Datang di Biodata Saya</h1>
+            <button id="enterBtn">Masuk ke Biodata</button>
+        </div>
+
+        <section class="biodata">
+            <div class="image-box">
+                <img id="profileImage" src="kuc.jpg" alt="Foto Profil">
+            </div>
+            <div class="info">
+                <p><strong>Nama:</strong>MUHAMMAD MUKHTAFI AZIZ</p>
+                <p><strong>Alamat:</strong> Jakarta, Indonesia</p>
+                <p><strong>Cita-cita:</strong> Menjadi orang</p>
+                <p><strong>Hobi:</strong> Main Game, Baca Sejarah, Mendengarkan Musik</p>
+            </div>
+        </section>
+
+        <section class="materi-bar">
+            <h2>📚 Materi Tambahan</h2>
+            <ul id="materiList">
+                <!-- Materi akan muncul dengan animasi JS -->
+            </ul>
+            <input type="text" id="materiInput" placeholder="Tambahkan materi...">
+            <button onclick="tambahMateri()">Tambah</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Biodata Website</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
